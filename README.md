@@ -3,15 +3,16 @@
 ## Overview
 
 OpTeamUs is a full-stack project and task management platform similar to Trello or Linear.
+
 It allows users to create workspaces, manage projects, and organize tasks using a Kanban workflow.
 
 The system is built using modern backend and frontend technologies and is fully containerized using Docker.
 
 ---
 
-## Tech Stack
+# Tech Stack
 
-### Backend
+## Backend
 
 * ASP.NET Core 8 Web API
 * Entity Framework Core
@@ -19,14 +20,14 @@ The system is built using modern backend and frontend technologies and is fully 
 * JWT Authentication
 * Swagger API documentation
 
-### Frontend
+## Frontend
 
 * React
 * TypeScript
 * Vite
 * Tailwind CSS
 
-### Infrastructure
+## Infrastructure
 
 * Docker
 * Docker Compose
@@ -34,7 +35,7 @@ The system is built using modern backend and frontend technologies and is fully 
 
 ---
 
-## Features
+# Features
 
 * User authentication (JWT)
 * Workspace management
@@ -46,26 +47,33 @@ The system is built using modern backend and frontend technologies and is fully 
 
 ---
 
-## System Architecture
+# System Architecture
 
-Frontend (React + Nginx)
-⬇
-Backend API (ASP.NET Core)
-⬇
+```
+Browser
+   │
+   ▼
+Frontend (React + Vite + Nginx)
+   │
+   ▼
+Backend API (ASP.NET Core 8)
+   │
+   ▼
 PostgreSQL Database
+```
 
-All services run in Docker containers.
+All services run in Docker containers orchestrated with Docker Compose.
 
 ---
 
-## Running the Application
+# Running the Application
 
-### Requirements
+## Requirements
 
 * Docker
 * Docker Compose
 
-### Start the system
+## Start the system
 
 From the root project folder run:
 
@@ -73,15 +81,17 @@ From the root project folder run:
 docker compose up --build
 ```
 
-### Access the services
+---
 
-Frontend
+# Access the Services
+
+## Frontend
 
 ```
 http://localhost:3000
 ```
 
-Backend API / Swagger
+## Backend API / Swagger
 
 ```
 http://localhost:8080/swagger
@@ -89,15 +99,17 @@ http://localhost:8080/swagger
 
 ---
 
-## Database
+# Database
 
 PostgreSQL runs in a Docker container and EF Core migrations are automatically applied when the backend starts.
 
 ---
 
-## API Authentication
+# API Authentication
 
 Authentication uses JWT tokens.
+
+Steps:
 
 1. Register a user
 2. Login to receive a token
@@ -111,7 +123,7 @@ Authorization: Bearer <token>
 
 ---
 
-## Project Structure
+# Project Structure
 
 ```
 ProjectFiles
@@ -127,6 +139,6 @@ ProjectFiles
 
 ---
 
-## Notes
+# Notes
 
 The application is designed with a modular architecture separating controllers, services, and data layers to maintain clean architecture and scalability.
